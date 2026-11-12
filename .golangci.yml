@@ -1,0 +1,32 @@
+# golangci-lint v2 configuration for the library and the demos.
+version: "2"
+
+linters:
+  # errcheck, govet, ineffassign, staticcheck and unused are on by default
+  enable:
+    - gocritic
+    - misspell
+    - revive
+    - unconvert
+    - unparam
+  settings:
+    revive:
+      rules:
+        - name: exported
+        - name: package-comments
+        - name: receiver-naming
+        - name: error-return
+        - name: error-strings
+        - name: indent-error-flow
+        - name: unused-parameter
+        - name: var-naming
+  exclusions:
+    rules:
+      # the error types of package table carry the Error prefix on purpose
+      - linters: [revive]
+        text: "error-naming|should be of the form .*Error"
+
+formatters:
+  enable:
+    - gofmt
+    - goimports

@@ -1,0 +1,21 @@
+.idea/
+vendor/
+.vscode
+
+# Build output
+/bin/
+coverage.out
+
+# Demo binaries built by hand with go build
+/main
+/cmd
+/demo-all
+/demo-*-flex-box-*
+/example/demo-*/demo-*
+/example/demo-*/cmd/cmd
+
+# Scratch
+/tmp/
+
+# direnv badge, per-machine
+.envrc
